@@ -1,24 +1,22 @@
 package cn.itcast.hotel;
 
-import cn.itcast.hotel.contants.HotelConstants;
 import cn.itcast.hotel.pojo.Hotel;
 import cn.itcast.hotel.pojo.HotelDoc;
 import cn.itcast.hotel.service.impl.HotelService;
 import com.alibaba.fastjson.JSON;
 import org.apache.http.HttpHost;
-import org.elasticsearch.action.bulk.BulkAction;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.GetIndexRequest;
 import org.elasticsearch.common.xcontent.XContentType;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.io.IOException;
 import java.util.List;
@@ -87,7 +85,9 @@ public class HotelIndexTest {
     void beforeEach() {
         this.client = new RestHighLevelClient(RestClient.builder(
                 HttpHost.create("http://1.14.76.222:9200")
+
         ));
+        System.out.println("1231232123");
     }
 
     @AfterEach
