@@ -87,7 +87,7 @@ public class HotelIndexTest {
                 HttpHost.create("http://1.14.76.222:9200")
 
         ));
-        System.out.println("1231232123");
+        System.out.println("1231232123我又修改了shabi");
     }
 
     @AfterEach
